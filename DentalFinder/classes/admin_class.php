@@ -30,6 +30,45 @@ class Admin{
         $this->clinicObj = new Clinic();
     }
 
+    public function deleteClinic($clinic_id){
+
+        $sql = "DELETE FROM clinics_services WHERE clinic_id = :clinic_id;";
+        $prepsql = $this->clinicconn->connect()->prepare($sql);
+        $prepsql->bindParam(':clinic_id', $clinic_id);
+
+        if($prepsql->execute()){
+
+        $sql = "DELETE FROM clinics WHERE clinic_id = :clinic_id;";
+        $prepsql = $this->clinicconn->connect()->prepare($sql);
+        $prepsql->bindParam(':clinic_id', $clinic_id);
+
+        return $prepsql->execute();
+        }
+    }
+
+    public function deleteUser($user_id){
+        $sql = "DELETE FROM users WHERE user_id = :user_id;";
+        $prepsql = $this->clinicconn->connect()->prepare($sql);
+        $prepsql->bindParam(':user_id', $user_id);
+
+        return $prepsql->execute();
+    }
+
+    public function deleteClinicRequest($pending_id){
+
+        $sql = "DELETE FROM admin_clinics_services WHERE pending_id = :pending_id;";
+        $prepsql = $this->adminconn->connect()->prepare($sql);
+        $prepsql->bindParam(':pending_id', $pending_id);
+
+        if($prepsql->execute()){
+
+        $sql = "DELETE FROM admin_clinics WHERE pending_id = :pending_id;";
+        $prepsql = $this->adminconn->connect()->prepare($sql);
+        $prepsql->bindParam(':pending_id', $pending_id);
+
+        return $prepsql->execute();
+        }
+    }
     public function ConfirmClinic($pending_id){
         $sql = "SELECT * FROM admin_clinics WHERE pending_id = :pending_id;";
     
@@ -164,5 +203,17 @@ class Admin{
         // Fetch the count and return it
         $result = $prepsql->fetch(PDO::FETCH_ASSOC); // Fetch the result as an associative array
         return $result['total']; // Return the count
+    }
+
+    public function activityLog($user_id, $user_type, $activity_type){
+        $sql = "INSERT INTO activity_logs (user_type, id, activity_type, ip_address, user_agent) VALUES (:user_type, :id, :activity_type, :ip_address, :user_agent);";
+        $prepsql = $this->adminconn->connect()->prepare($sql);
+        $prepsql->bindParam(':user_type', $user_type);
+        $prepsql->bindParam(':id', $user_id);
+        $prepsql->bindParam(':activity_type', $activity_type);
+        $prepsql->bindParam(':user_agent', $_SERVER['HTTP_USER_AGENT']);
+        $prepsql->bindParam(':ip_address', $_SERVER['REMOTE_ADDR']);
+
+        return $prepsql->execute();
     }
 }
