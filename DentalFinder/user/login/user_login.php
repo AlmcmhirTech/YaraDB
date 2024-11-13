@@ -13,8 +13,10 @@
     session_start();
     
     require_once "../../classes/user_classes.php";
+    require_once "../../classes/admin_class.php";
 
     $addUser = new User;
+    $adminObj = new Admin;
     if (isset($_POST["login"])) {
         // Sanitize email and store password
         $addUser->email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
@@ -28,6 +30,10 @@
             if (password_verify($addUser->password, $verify['password'])) {
                 $_SESSION["login"] = true;
                 $_SESSION["user_id"] = $verify['user_id'];
+                $user_id = $verify['user_id'];
+                $user_type = 'User';
+                $activity_type = 'Login';
+                $adminObj->activityLog($user_id, $user_type, $activity_type);
                 header("Location: ../interface/browse.php");
                 exit; // Make sure to exit after redirect
             } else {
