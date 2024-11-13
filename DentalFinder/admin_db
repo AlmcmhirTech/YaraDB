@@ -1,0 +1,101 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 13, 2024 at 09:59 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `admin_dentalfinder`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_clinics`
+--
+
+CREATE TABLE `admin_clinics` (
+  `pending_id` int(11) NOT NULL,
+  `clinic_name` varchar(255) NOT NULL,
+  `clinic_email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `mobile_number` int(11) NOT NULL,
+  `clinic_address` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `status` enum('Pending','Accepted','Rejected','') NOT NULL,
+  `license_code` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin_clinics`
+--
+
+INSERT INTO `admin_clinics` (`pending_id`, `clinic_name`, `clinic_email`, `password`, `mobile_number`, `clinic_address`, `description`, `status`, `license_code`) VALUES
+(4, 'Blabla Clinic', 'dadadas@gdas.com', '31232', 0, 'rwefasdfasd', '', 'Accepted', 'dasdas');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_clinics_services`
+--
+
+CREATE TABLE `admin_clinics_services` (
+  `pending_id` int(11) NOT NULL,
+  `service_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin_clinics`
+--
+ALTER TABLE `admin_clinics`
+  ADD PRIMARY KEY (`pending_id`),
+  ADD UNIQUE KEY `clinic_name` (`clinic_name`,`license_code`),
+  ADD UNIQUE KEY `clinic_email` (`clinic_email`,`mobile_number`);
+
+--
+-- Indexes for table `admin_clinics_services`
+--
+ALTER TABLE `admin_clinics_services`
+  ADD KEY `fk1_pending_id` (`pending_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin_clinics`
+--
+ALTER TABLE `admin_clinics`
+  MODIFY `pending_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `admin_clinics_services`
+--
+ALTER TABLE `admin_clinics_services`
+  ADD CONSTRAINT `fk1_pending_id` FOREIGN KEY (`pending_id`) REFERENCES `admin_clinics` (`pending_id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
