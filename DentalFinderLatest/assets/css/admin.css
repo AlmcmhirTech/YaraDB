@@ -41,7 +41,7 @@ body {
     min-width: 70px;
     z-index: 1000;
     transition: all .25s ease-in-out;
-    background-color: #0B0C0D;
+    background-color: #7CB9E8;
     display: flex;
     flex-direction: column;
 }
@@ -60,7 +60,7 @@ body {
 
 .toggle-btn i {
     font-size: 1.5rem;
-    color: #FFF;
+    color: #00308F;
 }
 
 .sidebar-logo {
@@ -68,7 +68,7 @@ body {
 }
 
 .sidebar-logo a {
-    color: #FFF;
+    color: #00308F;
     font-size: 1.15rem;
     font-weight: 600;
 }
@@ -110,7 +110,7 @@ body {
 
 a.sidebar-link {
     padding: .625rem 1.625rem;
-    color: #FFF;
+    color: #00308F;
     display: block;
     font-size: 0.9rem;
     white-space: nowrap;
@@ -135,7 +135,7 @@ a.sidebar-link:hover {
     position: absolute;
     top: 0;
     left: 70px;
-    background-color: #0B0C0D;
+    background-color: #7CB9E8;
     padding: 0;
     min-width: 15rem;
     display: none;

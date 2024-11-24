@@ -164,27 +164,6 @@ hr{
     color: goldenrod;
 }
 
-/* SINGLE BOOKING */
-#appointment-form{
-    width: 50%;
-    margin: 5px auto;
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #4169e1;
-}
-#appoinment-form input{
-    width: 80%;
-    margin: 5px auto;
-}
-
-#appointment-form #book-btn{
-    background-color: #4169e1;
-    color: #fff;
-}
-
-
-
-
 
 /* FOOTER STYLE */
 

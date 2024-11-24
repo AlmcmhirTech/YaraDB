@@ -32,7 +32,6 @@ body {
     width: 100%;
     overflow: hidden;
     transition: all 0.35s ease-in-out;
-    background-color: #fff;
     min-width: 0;
 }
 
@@ -198,5 +197,68 @@ a.sidebar-link:hover {
 }
 
 
+
+        /* Default Light Mode for .settings-page */
+        .settings-page {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        .settings-page .navbar {
+            background-color: #ffffff;
+            color: #212529;
+        }
+
+        .settings-page .card {
+            background-color: #ffffff;
+            color: #212529;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-page .btn {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+        }
+
+        .settings-page .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Dark Mode for .settings-page */
+        .settings-page.dark-mode {
+            background-color: #0B0C0D;;
+            color: #ffffff;
+        }
+
+        .settings-page.dark-mode .navbar {
+            background-color: #1f1f1f;
+            color: #ffffff;
+        }
+
+        .settings-page.dark-mode .card {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        .settings-page.dark-mode .btn {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .settings-page.dark-mode .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .settings-page.dark-mode .form-check-input {
+            border-color: #ffffff;
+        }
+
+        .settings-page .form-check-input:checked {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
 
 @media (min-width: 768px) {}
