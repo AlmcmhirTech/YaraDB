@@ -61,6 +61,12 @@
                 <span>Notifications <span class="badge text-bg-danger">7</span></span>
             </a>
         </li>
+        <li class="sidebar-item">
+            <a href="settings.php" class="sidebar-link">
+                <i class="lni lni-cog"></i>
+                <span>Settings</span>
+            </a>
+        </li>
     </ul>
     <div class="sidebar-footer">
         <a href="#" class="sidebar-link">
