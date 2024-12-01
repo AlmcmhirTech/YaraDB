@@ -13,6 +13,33 @@
     <link rel="stylesheet" href="<%= cssFile %>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+
+
+    <!-- THIS ONE IS FOR THE CSS FOR SEARCH -->
+    <style>
+        .search-input {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .search-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            height: 45px;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
@@ -120,6 +147,11 @@
             <!-- TABLE BODY -->
             <div class="row">
                 <div class="col-12">
+<!-- SEARCH -->
+                        <div class="d-flex mb-3">
+                            <input class="search-input me-2" type="text" placeholder="Search for services..">
+                            <button type="button" class="search-button">Search</button>
+                        </div>
                     <table class="table table-striped">
                         <thead>
 
