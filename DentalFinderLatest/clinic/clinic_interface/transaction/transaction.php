@@ -10,7 +10,7 @@
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/clinic.css">
+    <link rel="stylesheet" href="../../../assets/css/clinic.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 </head>
@@ -42,6 +42,17 @@
                 </div>
             </nav>
 
+            <!-- FILTERS -->
+            <div class="d-flex mb-3">
+                <input type="text" id="searchInput" class="form-control me-2" placeholder="Search...">
+                <select id="paymentStatusFilter" class="form-select me-2">
+                    <option value="">All Payment Status</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Overdue">Overdue</option>
+                </select>
+                <button type="button" class="btn btn-primary me-2">Filter</button>
+            </div>
 
             <!-- TABLE BODY -->
             <div class="row">
@@ -64,88 +75,22 @@
 
                             <tr>
                                 <td>1</td>
-                                <td>Juan Dela Cruz</td>
-                                <td>Teeth Cleaning</td>
-                                <td>P1000</td>
-                                <td><span class="badge bg-warning">Pending</span></td>
+                                <td>John Doe</td>
+                                <td>Dental Cleaning</td>
+                                <td>PHP 1,500</td>
+                                <td>Paid</td>
                                 <td>
-                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#confirmModal">
-                                        Confirm
-                                    </button>
-
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="confirmModalLabel">Confirm Payment?</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form>
-                                                        <div class="mb-3">
-                                                            <label for="pName" class="form-label">Patient Name:</label>
-                                                            <input type="text" class="form-control" id="pName" value="Juan Dela Cruz" readonly>
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label for="service-type" class="form-label">Service Type</label>
-                                                            <input type="text" class="form-control" id="service-type" value="Teeth Cleaning" readonly>
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label for="price" class="form-label">Price</label>
-                                                            <input type="text" class="form-control" id="service-type" value="P1000" readonly>
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label for="status" class="form-label">Status</label>
-                                                            <input type="text" class="form-control" id="status" value="Pending" readonly>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-success">Confirm</button>
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- DELETE BUTTON -->
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletebtn">
-                                        Delete
-                                    </button>
-
-                                    <!-- MODAL -->
-                                    <div class="modal fade" id="deletebtn" tabindex="-1" role="dialog" aria-labelledby="deletebtnTitle" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="deletebtnTitle">No Show Confirmation</h5>
-                                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Are you sure you want to flag this patient?
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                                                    <button type="button" class="btn btn-success">Confirm</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <button type="button" class="btn btn-success">Edit</button>
+                                    <button type="button" class="btn btn-danger">Delete</button>
                                 </td>
                             </tr>
-
+                            <!-- Add more rows as needed -->
 
                         </tbody>
                 </div>
             </div>
 
-            <script src="../assets/js/style.js"></script>
+            <script src="../../../assets/js/style.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
