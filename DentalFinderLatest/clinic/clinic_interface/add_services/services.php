@@ -48,6 +48,8 @@
                         <option value="Emergency Dental Services">Emergency Dental Services</option>
                         <option value="Specialty Services">Specialty Services</option>
                     </select>
+                    <input type="number" id="minPriceFilter" class="form-control me-2" placeholder="Min Price">
+                    <input type="number" id="maxPriceFilter" class="form-control me-2" placeholder="Max Price">
                     <button type="button" class="btn btn-primary me-2">Filter</button>
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addServiceModal">
                         <i class="lni lni-circle-plus me-2"></i> Add Service
@@ -182,7 +184,7 @@
         </div>
     </div>
 
-    <script src="../assets/js/style.js"></script>
+    <script src="../../../assets/js/style.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
