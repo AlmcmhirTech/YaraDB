@@ -10,7 +10,7 @@
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/clinic.css">
+    <link rel="stylesheet" href="../../../assets/css/clinic.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
@@ -19,7 +19,6 @@
         <?php require_once("../../clinic_sidebar.php"); ?>
         <div class="main">
             <nav class="navbar navbar-expand px-4 py-3">
-                <form action="#" class="d-none d-sm-inline-block"></form>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item dropdown">
@@ -34,9 +33,26 @@
 
             <main class="content px-3 py-4">
                 <h3 class="fw-bold fs-4 my-3">Services</h3>
-                <button type="button" class="btn btn-success d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#addServiceModal">
-                    <i class="lni lni-circle-plus me-2"></i> Add Service
-                </button>
+                <div class="d-flex mb-3">
+                    <input type="text" id="searchInput" class="form-control me-2" placeholder="Search for services...">
+                    <select id="categoryFilter" class="form-select me-2">
+                        <option value="">All Categories</option>
+                        <option value="Preventive Care">Preventive Care</option>
+                        <option value="Restorative Dentistry">Restorative Dentistry</option>
+                        <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                        <option value="Orthodontics">Orthodontics</option>
+                        <option value="Periodontics">Periodontics (Gum Health)</option>
+                        <option value="Pediatric Dentistry">Pediatric Dentistry (Children’s Dental Care)</option>
+                        <option value="Oral Surgery">Oral Surgery</option>
+                        <option value="Prosthodontics">Prosthodontics (Dental Prosthetics)</option>
+                        <option value="Emergency Dental Services">Emergency Dental Services</option>
+                        <option value="Specialty Services">Specialty Services</option>
+                    </select>
+                    <button type="button" class="btn btn-primary me-2">Filter</button>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addServiceModal">
+                        <i class="lni lni-circle-plus me-2"></i> Add Service
+                    </button>
+                </div>
 
                 <!-- Modal for Adding Service -->
                 <div class="modal fade" id="addServiceModal" tabindex="-1" aria-labelledby="addServiceLabel" aria-hidden="true">
@@ -49,7 +65,6 @@
                             <div class="modal-body">
                                 <form>
                                     <label for="category">Choose a Category:</label>
-
                                     <select id="category" class="form-select">
                                         <option value="">-- Select Category --</option>
                                         <option value="Preventive Care">Preventive Care</option>
